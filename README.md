@@ -45,6 +45,9 @@ make defconfig BR2_DEFCONFIG=<path-to-defconfig-file>
 
 ## build
 
+Takes about 10-15 minutes on my crummy laptop (https://www.amd.com/en/products/apu/amd-ryzen-3-2300u).
+Note that you need internet during the build, buildroot fetches sources as it goes.
+
 ```bash
 make --load-average=8
 ```
