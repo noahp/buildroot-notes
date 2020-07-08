@@ -28,6 +28,10 @@ git clone git://git.buildroot.net/buildroot
 
 ## config
 
+I ran through menuconfig and set a few flags, in the savedefconfig output below.
+
+But quicker option would be `make qemu_x86_64_defconfig` :grinning:
+
 ```defconfig
 BR2_x86_64=y
 BR2_KERNEL_HEADERS_5_7=y
