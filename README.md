@@ -1,4 +1,4 @@
-# buildroot
+# buildroot (x86-64 target)
 
 How to buildroot!
 
