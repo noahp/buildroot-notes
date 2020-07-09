@@ -33,12 +33,13 @@ I ran through menuconfig and set a few flags, in the savedefconfig output below.
 But quicker option would be `make qemu_x86_64_defconfig` :grinning:
 
 ```defconfig
-BR2_x86_64=y
-BR2_KERNEL_HEADERS_5_7=y
-BR2_LINUX_KERNEL=y
-BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG=y
-BR2_TARGET_ROOTFS_ISO9660=y
-BR2_TARGET_SYSLINUX=y
+BR2_HAVE_DOT_CONFIG=y
+BR2_i386=y
+BR2_x86_i686=y
+BR2_ARCH="i686"
+BR2_ENDIAN="LITTLE"
+BR2_GCC_TARGET_TUNE="i686"
+BR2_GCC_TARGET_ARCH="i686"
 ```
 
 Configure it using:
@@ -59,7 +60,7 @@ make --load-average=8
 ## test it!
 
 ```bash
-qemu-system-x86_64 -cdrom output/images/rootfs.iso9660
+qemu-system-x86_64 -nographic -append "console=ttyS0" -enable-kvm -kernel output/images/bzImage
 
 # login is root, no password
 ```
